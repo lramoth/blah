@@ -2,7 +2,8 @@
 <input type="submit" id="mybutton" value="My Button" />
 <script type="text/javascript">
     document.getElementById("mybutton").addEventListener("click",function(){
-       alert("Hello World");
+        var message = {token:'adfagaefafasdsfaf'};
+        window.webkit.messageHandler.userLogin.postMessage(message);
     },false);
 </script>
 </html>
