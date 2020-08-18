@@ -27,5 +27,8 @@
         var message = {token:'adfagaefafasdsfaf'};
         window.webkit.messageHandlers.ssoTokenCallback.postMessage(message);
     },false);
+    
+    // direct call test without user action
+    window.webkit.messageHandlers.ssoTokenCallback.postMessage(message);
 </script>
 </html>
