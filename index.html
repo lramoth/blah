@@ -15,6 +15,9 @@
     <div id="postMessage"></div>
     </br>
     <div id="output"></div>
+    </br>
+    <div>callback:</div>
+    <div id="callback"></div>
 </div>
 
 <script type="text/javascript">
@@ -45,6 +48,7 @@
             // iOS callback
             document.getElementById("output").innerText = "Callback set";
             callback = window.webkit.messageHandlers.ssoTokenCallback.postMessage;
+            document.getElementById("callback").innerHTML = callback;
             window.webkit.messageHandlers.ssoTokenCallback.postMessage({"token": ""});
         } else if (typeof JSBridge != 'undefined' && JSBridge.ssoTokenCallback) {
             // android callback
