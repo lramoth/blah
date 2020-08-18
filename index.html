@@ -22,9 +22,8 @@
     document.getElementById("ssoTokenCallback").innerHTML = window.webkit.messageHandlers.ssoTokenCallback;
     document.getElementById("postMessage").innerHTML =  window.webkit.messageHandlers.ssoTokenCallback.postMessage;
 
-    
+    var message = {token:'adfagaefafasdsfaf'};
     document.getElementById("mybutton").addEventListener("click",function(){
-        var message = {token:'adfagaefafasdsfaf'};
         window.webkit.messageHandlers.ssoTokenCallback.postMessage(message);
     },false);
     
