@@ -49,7 +49,8 @@
             document.getElementById("output").innerText = "Callback set";
             callback = window.webkit.messageHandlers.ssoTokenCallback.postMessage;
             document.getElementById("callback").innerHTML = callback;
-            window.webkit.messageHandlers.ssoTokenCallback.postMessage({"token": ""});
+            //window.webkit.messageHandlers.ssoTokenCallback.postMessage({"token": ""});
+            callback({"token": ""});
         } else if (typeof JSBridge != 'undefined' && JSBridge.ssoTokenCallback) {
             // android callback
             callback = JSBridge.ssoTokenCallback;
