@@ -13,6 +13,8 @@
     </br>
     <div>window.webkit.messageHandlers.postMessage:</div>
     <div id="postMessage"></div>
+    </br>
+<div id="output"></div>
 </div>
 
 <script type="text/javascript">
@@ -29,5 +31,6 @@
     
     // direct call test without user action
     window.webkit.messageHandlers.ssoTokenCallback.postMessage(message);
+    document.getElementById("output").innerHTML = "Called directly";
 </script>
 </html>
