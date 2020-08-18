@@ -38,7 +38,7 @@
     
     
     (function () {
-        //let callback = function(payload) {};
+        let cb = function(payload) {};
         if (
             window.webkit &&
             window.webkit.messageHandlers &&
@@ -47,10 +47,10 @@
         ) {
             // iOS callback
             document.getElementById("output").innerText = "Callback set";
-            let callback = window.webkit.messageHandlers.ssoTokenCallback.postMessage;
+            cb = window.webkit.messageHandlers.ssoTokenCallback.postMessage;
             document.getElementById("callback").innerHTML = callback;
             //window.webkit.messageHandlers.ssoTokenCallback.postMessage({"token": ""});
-            callback({"token": ""});
+            cb({"token": ""});
         } else if (typeof JSBridge != 'undefined' && JSBridge.ssoTokenCallback) {
             // android callback
             callback = JSBridge.ssoTokenCallback;
