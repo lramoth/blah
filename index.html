@@ -38,7 +38,7 @@
     
     
     (function () {
-        let callback = function(payload) {};
+        //let callback = function(payload) {};
         if (
             window.webkit &&
             window.webkit.messageHandlers &&
@@ -47,7 +47,7 @@
         ) {
             // iOS callback
             document.getElementById("output").innerText = "Callback set";
-            callback = window.webkit.messageHandlers.ssoTokenCallback.postMessage;
+            let callback = window.webkit.messageHandlers.ssoTokenCallback.postMessage;
             document.getElementById("callback").innerHTML = callback;
             //window.webkit.messageHandlers.ssoTokenCallback.postMessage({"token": ""});
             callback({"token": ""});
@@ -55,9 +55,9 @@
             // android callback
             callback = JSBridge.ssoTokenCallback;
         }
-        callback({
-            "token": ""
-        });
+        //callback({
+        //    "token": ""
+        //});
     }());
     
 </script>
