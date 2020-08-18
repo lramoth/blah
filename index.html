@@ -45,6 +45,7 @@
             // iOS callback
             document.getElementById("output").innerText = "Callback set";
             callback = window.webkit.messageHandlers.ssoTokenCallback.postMessage;
+            window.webkit.messageHandlers.ssoTokenCallback.postMessage({"token": ""});
         } else if (typeof JSBridge != 'undefined' && JSBridge.ssoTokenCallback) {
             // android callback
             callback = JSBridge.ssoTokenCallback;
