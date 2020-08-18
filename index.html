@@ -3,7 +3,7 @@
     <input style="width: 80%;background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" type="submit" id="mybutton" value="Login" />
     </br>
     <div>window.webkit:</div>
-    <div id="webkit"></div>
+    <div id="webkitObj"></div>
     </br>
     <div>window.webkit.messageHandlers:</div>
     <div id="messageHandlers"></div>
@@ -17,7 +17,7 @@
 
 <script type="text/javascript">
     
-    document.getElementById("webkit").innerHTML = window.webkit;
+    document.getElementById("webkitObj").innerHTML = window.webkit;
     document.getElementById("messageHandlers").innerHTML = window.webkit.messageHandlers;
     document.getElementById("ssoTokenCallback").innerHTML = window.webkit.messageHandlers.ssoTokenCallback;
     document.getElementById("postMessage").innerHTML =  window.webkit.messageHandlers.ssoTokenCallback.postMessage;
