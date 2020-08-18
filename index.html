@@ -1,12 +1,27 @@
 <html>
 <div style="text-align:center">
     <input style="width: 80%;background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" type="submit" id="mybutton" value="Login" />
-    <div id="webkitObj"></div>
+    </br>
+    <div>window.webkit:</div>
+    <div id="webkit"></div>
+    </br>
+    <div>window.webkit.messageHandlers:</div>
+    <div id="messageHandlers"></div>
+    </br>
+    <div>window.webkit.messageHandlers.ssoTokenCallback:</div>
+    <div id="ssoTokenCallback"></div>
+    </br>
+    <div>window.webkit.messageHandlers.postMessage:</div>
+    <div id="postMessage"></div>
 </div>
 
 <script type="text/javascript">
     
-    document.getElementById("webkitObj").innerHTML = window.webkit;
+    document.getElementById("webkit").innerHTML = window.webkit;
+    document.getElementById("messageHandlers").innerHTML = window.webkit.messageHandlers;
+    document.getElementById("ssoTokenCallback").innerHTML = window.webkit.messageHandlers.ssoTokenCallback;
+    document.getElementById("postMessage").innerHTML =  window.webkit.messageHandlers.ssoTokenCallback.postMessage;
+
     
     document.getElementById("mybutton").addEventListener("click",function(){
         var message = {token:'adfagaefafasdsfaf'};
