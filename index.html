@@ -29,8 +29,29 @@
         window.webkit.messageHandlers.ssoTokenCallback.postMessage(message);
     },false);
     
-    // direct call test without user action
-    window.webkit.messageHandlers.ssoTokenCallback.postMessage(message);
-    document.getElementById("output").innerText = "Called directly";
+    // direct call test without user action (this works fine)
+    //window.webkit.messageHandlers.ssoTokenCallback.postMessage(message);
+    //document.getElementById("output").innerText = "Called directly";
+    
+    
+    (function () {
+        let callback = function(payload) {}
+        if (
+            window.webkit &&
+            window.webkit.messageHandlers &&
+            window.webkit.messageHandlers.ssoTokenCallback &&
+            window.webkit.messageHandlers.ssoTokenCallback.postMessage
+        ) {
+            // iOS callback
+            callback = window.webkit.messageHandlers.ssoTokenCallback.postMessage;
+        } else if (typeof JSBridge != 'undefined' && JSBridge.ssoTokenCallback) {
+            // android callback
+            callback = JSBridge.ssoTokenCallback;
+        }
+        callback({
+            "token": ""
+        });
+    }());
+    
 </script>
 </html>
