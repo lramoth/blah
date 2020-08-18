@@ -5,7 +5,7 @@
 <script type="text/javascript">
     document.getElementById("mybutton").addEventListener("click",function(){
         var message = {token:'adfagaefafasdsfaf'};
-        window.webkit.messageHandlers.userLogin.postMessage(message);
+        window.webkit.messageHandlers.ssoTokenCallback.postMessage(message);
     },false);
 </script>
 </html>
